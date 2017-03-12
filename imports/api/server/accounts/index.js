@@ -3,11 +3,11 @@ Accounts.onCreateUser((options, user ) => {
 
     if (facebookService) {
         user.profile = {
-            "firstName": facebookService['first_name'],
-            "lastName": facebookService['last_name'],
+            "firstName": facebookService['first_name'] || '',
+            "lastName": facebookService['last_name'] || '',
             "email": facebookService['email'] || '',
             "phone": '',
-            "birthday": facebookService['user_birthday'],
+            "birthday": facebookService['user_birthday'] || '',
             "startedSkatingYear": '',
             "zipCode":''
         };
