@@ -12,7 +12,7 @@ Meteor.methods({
             zipCode: String
         });
 
-        Meteor.users.upsert({_id: this.userId},
+        Meteor.users.update({_id: this.userId},
             {
                 $set: {
                     "profile.firstName": val.firstName.trim(),
